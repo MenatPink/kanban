@@ -1,0 +1,36 @@
+//GLOBAL
+
+//COLORS
+$purple: rgb(99, 95, 199);
+$lightpurple: rgb(168, 164, 255);
+$black: rgb(0, 1, 18);
+$blackgrey: rgb(32, 33, 44);
+$darkgrey: rgb(43, 44, 55);
+$grey: rgb(62, 63, 78);
+$lightgrey: rgb(130, 143, 163);
+$darkwhite: rgb(228, 235, 250);
+$white: rgb(244, 247, 253);
+$lightwhite: rgb(255, 255, 255);
+$red: rgb(234, 85, 85);
+$lightred: rgb(255, 152, 152);
+
+//TYPOGRAPHY
+@font-face {
+  font-family: "jakarta-light", sans-serif;
+  src: url("../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf");
+}
+
+@font-face {
+  font-family: "jakarta", sans-serif;
+  src: url("../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf");
+}
+
+@font-face {
+  font-family: "jakarta-medium", sans-serif;
+  src: url("../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf");
+}
+
+@font-face {
+  font-family: "jakarta-bold", sans-serif;
+  src: url("../assets/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf");
+}
