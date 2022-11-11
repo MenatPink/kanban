@@ -1,20 +1,37 @@
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.0
 jobs:
-  bobby:
+  build:
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: cimg/node:19.0.1
     steps:
       - checkout
-      - run: echo "A first hello"
-  sally:
-      docker:
-        - image: circleci/ruby:2.4.1
-      steps:
-        - checkout
-        - run: echo "A second hello"
+      - run: pwd && ls && cd client && ls
+      - run: echo "build step"
+      - run: cd client && npm run build
+  test:
+    docker:
+      - image: cimg/node:19.0.1
+    steps:
+      - checkout
+      - run: echo "test step"
+      - run: npm run test
+  coverage:
+    docker:
+      - image: cimg/node:19.0.1
+    steps:
+      - browser-tools/install-browser-tools
+      - run: npm install
+      - run:
+          name: "Run Jest and Collect Coverage Reports"
+          command: jest --collectCoverage=true
+      - store_artifacts:
+          path: coverage
 workflows:
   version: 2
-  bobby_sally:
+  buildcheck:
     jobs:
-      - bobby
-      - sally
+      - build
+      - test
+      - coverage
