@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:8.9
+      - image: cimg/node:19.0.1
     steps:
       - checkout
       - run: echo "build step"
@@ -16,7 +16,7 @@ jobs:
       - run: npm run test
   coverage:
     docker:
-      - image: cimg/node:8.9
+      - image: cimg/node:19.0.1
     steps:
       - browser-tools/install-browser-tools
       - run: npm install
