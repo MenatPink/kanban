@@ -7,22 +7,21 @@ jobs:
       - image: cimg/node:19.0.1
     steps:
       - checkout
-      - run: pwd && ls && cd client && ls
       - run: echo "build step"
-      - run: cd client && npm run build
+      - run: cd client && npm build
   test:
     docker:
       - image: cimg/node:19.0.1
     steps:
       - checkout
       - run: echo "test step"
-      - run: npm run test
+      - run: cd client && npm test
   coverage:
     docker:
       - image: cimg/node:19.0.1
     steps:
       - browser-tools/install-browser-tools
-      - run: npm install
+      - run: cd client && npm install
       - run:
           name: "Run Jest and Collect Coverage Reports"
           command: jest --collectCoverage=true
