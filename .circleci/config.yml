@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.4.0
 jobs:
   build:
     docker:
@@ -9,7 +11,7 @@ jobs:
       - run: cd client && npm run build
   test:
     docker:
-      - image: cimg/node:8.9
+      - image: cimg/node:19.0.1
     steps:
       - checkout
       - run: echo "test step"
