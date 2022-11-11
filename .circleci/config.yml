@@ -2,21 +2,21 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.9
+      - image: cimg/node:8.9
     steps:
       - checkout
       - run: echo "build step"
-      - run: npm run build
+      - run: cd client && npm run build
   test:
     docker:
-      - image: circleci/node:8.9
+      - image: cimg/node:8.9
     steps:
       - checkout
       - run: echo "test step"
       - run: npm run test
   coverage:
     docker:
-      - image: circleci/node:8.9
+      - image: cimg/node:8.9
     steps:
       - browser-tools/install-browser-tools
       - run: npm install
