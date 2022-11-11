@@ -27,7 +27,6 @@ jobs:
           command: jest --collectCoverage=true
       - store_artifacts:
           path: coverage
-
 workflows:
   version: 2
   buildcheck:
