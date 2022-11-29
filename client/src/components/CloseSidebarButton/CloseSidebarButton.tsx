@@ -7,6 +7,7 @@ const CloseSidebarButton = () => {
   const dispatch = useAppDispatch();
   return (
     <div
+      data-testid='close-sidebar-button'
       className={styles.closeSidebar}
       onClick={() => {
         dispatch(closeSidebarAction());

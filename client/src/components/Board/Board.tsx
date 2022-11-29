@@ -2,8 +2,10 @@ import styles from './Board.module.scss';
 
 const Board = () => {
   return (
-    <div className={styles.board}>Board</div>
-  )
-}
+    <div data-testid='board' className={styles.board}>
+      Board
+    </div>
+  );
+};
 
-export default Board
+export default Board;
