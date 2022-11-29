@@ -1,0 +1,15 @@
+@import "../../styles/main.module.scss";
+
+.closeSidebar{
+    position:absolute;
+    bottom:47px;
+    left:32px;
+    display:flex;
+    align-items:center;
+    color:$lightgrey;
+    p{
+      padding-left:15px;
+      font-family:var(--kanban-font-medium);
+      cursor:pointer;
+    }   
+  }

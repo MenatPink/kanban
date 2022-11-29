@@ -1,0 +1,15 @@
+@import '../../styles/main.module.scss';
+
+.container {
+  position: fixed;
+  bottom: 32px;
+  left: 0;
+  background-color: $primary;
+  width: 56px;
+  height: 48px;
+  border-radius: 0px 100px 100px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

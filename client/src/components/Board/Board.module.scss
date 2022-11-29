@@ -1,0 +1,6 @@
+@import '../../styles/main.module.scss';
+
+.board{
+    background-color: $darkwhite;
+    height: calc(100vh - 97px)
+}   

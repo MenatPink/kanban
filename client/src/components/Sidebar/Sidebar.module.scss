@@ -1,0 +1,59 @@
+@import "../../styles/main.module.scss";
+
+.sidebar {
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: $lightwhite;
+}
+
+.logo {
+  height: 97px;
+  padding-left: 34px;
+}
+
+.boardList {
+  margin-top: 20px;
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+  li {
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    // background-color: $primary;
+    width: 276px;
+    border-radius: 0px 100px 100px 0px;
+    color: $lightgrey;
+    font-family: var(--kanban-font-medium);
+    font-size: 15px;
+    p {
+      padding-left: 16px;
+    } 
+  }
+  .newBoardButton {
+    path {
+      fill: $primary;
+    }
+    p {
+      color: $primary;
+    }
+  }
+}
+
+.boardNumber {
+  font-size: 12px;
+  color: $lightgrey;
+  margin-left: 32px;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  font-family: var(--kanban-font-medium);
+}
+
+.sidebar.closed{
+  left: -300px;
+}

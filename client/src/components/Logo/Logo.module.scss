@@ -1,0 +1,14 @@
+@import "../../styles/main.module.scss";
+
+.logoContainer {
+  display: flex;
+  height: 100%;
+  border-right: 1px solid $darkwhite;
+  padding-right: 34px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logoImageTitle {
+  padding-left: 15px;
+}
