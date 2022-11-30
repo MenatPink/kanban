@@ -1,0 +1,27 @@
+@import '../../styles/main.module.scss';
+
+.container {
+  height: 100%;
+  margin-right:24px;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-transform: uppercase;
+  font-family: 'jakarta-bold', 'sans-serif';
+  color: $lightgrey;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 2.4px;
+  text-align: left;
+}
+
+.columnColor {
+  width: 15px;
+  height: 15px;
+  background-color: aqua;
+  border-radius: 50%;
+  margin-right: 12px;
+}

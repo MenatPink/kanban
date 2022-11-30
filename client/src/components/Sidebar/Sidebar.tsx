@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../hooks/hooks';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import Logo from '../Logo/Logo';
 import styles from './Sidebar.module.scss';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,20 +6,19 @@ import { ReactComponent as BoardIcon } from '../../assets/images/board-icon.svg'
 import ThemeSwitchButton from '../ThemeSwitchButton/ThemeSwitchButton';
 import CloseSidebarButton from '../CloseSidebarButton/CloseSidebarButton';
 import OpenSidebarButton from '../OpenSidebarButton/OpenSidebarButton';
+import { smoothAnimationCurve } from '../../utils/animation';
+import { switchBoardAction } from '../../actions/switchBoard.action';
 
 const Sidebar = () => {
-  const { sidebarStatus } = useAppSelector((state) => state.openSidebarReducer);
+  const dispatch = useAppDispatch();
+  const { sidebarStatus } = useAppSelector((state) => state.sidebar);
+  const { boards } = useAppSelector((state) => state.config);
+  // const { title } = useAppSelector((state) => state.activeBoard);
 
   const sidebarVariants = {
     start: { opacity: 1, x: -300 },
-    open: {opacity: 1, x: 0},
-    closed: { opacity: 1, x: -300 },
-  };
-
-  const smoothAnimationCurve = {
-    type: 'tween',
-    duration: .5,
-    ease: 'easeOut'
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 1, x: -300 }
   };
 
   return !sidebarStatus ? (
@@ -27,7 +26,7 @@ const Sidebar = () => {
       <motion.div
         key='open-sidebar-button'
         initial={{ opacity: 0, x: 300 }}
-        animate={{opacity: 1, x: 0 }}
+        animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 300 }}
         transition={smoothAnimationCurve}>
         <OpenSidebarButton />
@@ -48,18 +47,16 @@ const Sidebar = () => {
         </div>
         <p className={styles.boardNumber}>All boards (3)</p>
         <ul className={styles.boardList}>
-          <li>
-            <BoardIcon />
-            <p>Platform Launch</p>
-          </li>
-          <li>
-            <BoardIcon />
-            <p>Marketing Plan</p>
-          </li>
-          <li>
-            <BoardIcon />
-            <p>Roadmap</p>
-          </li>
+          {boards.map((board, i) => (
+            <li
+              key={i}
+              onClick={() => {
+                dispatch(switchBoardAction(i));
+              }}>
+              <BoardIcon />
+              <p>{board.title}</p>
+            </li>
+          ))}
           <li className={styles.newBoardButton}>
             <BoardIcon />
             <p>+ Create New Board</p>

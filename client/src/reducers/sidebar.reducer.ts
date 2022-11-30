@@ -1,13 +1,9 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import actions from '../enum/actions.enum';
-import { initialState } from '../store/initialState';
-
-interface State {
-  sidebarStatus: boolean;
-}
+// import { initialState, State } from '../store/initialState';
 
 const sidebar = (
-  state: State = initialState,
+  state = { sidebarStatus: false },
   action: PayloadAction<boolean>
 ) => {
   switch (action.type) {

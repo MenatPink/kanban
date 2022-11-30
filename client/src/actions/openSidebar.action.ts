@@ -1,7 +1,5 @@
 import actions from '../enum/actions.enum';
 
-export const openSidebarAction = () => {
-  console.log('this was clicked')
-  return {
+export const openSidebarAction = () => ({
     type: actions.SIDEBAR_OPENED,
-  }};
+});

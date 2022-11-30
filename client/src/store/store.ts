@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import openSidebarReducer from '../reducers/sidebar.reducer';
+import sidebar from '../reducers/sidebar.reducer';
+import board from '../reducers/board.reducer';
+import { initialState } from './initialState';
 import thunkMiddleware from 'redux-thunk';
 
 const store = configureStore({
-  reducer: { openSidebarReducer },
+  reducer: { sidebar, board, config: () => initialState },
   middleware: [thunkMiddleware]
 });
 
