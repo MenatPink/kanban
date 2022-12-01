@@ -1,4 +1,4 @@
-@import "../../styles/main.module.scss";
+@import '../../styles/main.module.scss';
 
 .sidebar {
   position: absolute;
@@ -7,6 +7,10 @@
   left: 0;
   top: 0;
   background-color: $lightwhite;
+}
+
+.sidebar.dark {
+  background-color: $darkgrey;
 }
 
 .logo {
@@ -31,10 +35,10 @@
     color: $lightgrey;
     font-family: var(--kanban-font-medium);
     font-size: 15px;
-    cursor:pointer;
+    cursor: pointer;
     p {
       padding-left: 16px;
-    } 
+    }
   }
   .newBoardButton {
     path {
@@ -55,6 +59,6 @@
   font-family: var(--kanban-font-medium);
 }
 
-.sidebar.closed{
+.sidebar.closed {
   left: -300px;
 }
