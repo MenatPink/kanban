@@ -1,6 +1,6 @@
 export interface State {
   sidebarStatus: boolean;
-  lightMode: true;
+  darkMode: true;
   activeBoard: Boards[];
   boards: Boards[];
 }
@@ -22,7 +22,7 @@ export interface Tasks {
 
 export const initialState: State = {
   sidebarStatus: false,
-  lightMode: true,
+  darkMode: true,
   activeBoard: [],
   boards: [
     {

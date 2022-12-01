@@ -7,7 +7,6 @@ import { smoothAnimationCurve } from '../../utils/animation';
 
 const Logo = () => {
   const { sidebarStatus } = useAppSelector((state) => state.sidebar);
-  console.log(sidebarStatus);
 
   const sidebarVariant = {
     open: { paddingRight: 100 },

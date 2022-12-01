@@ -1,6 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import actions from '../enum/actions.enum';
-// import { initialState, State } from '../store/initialState';
 
 const sidebar = (
   state = { sidebarStatus: false },

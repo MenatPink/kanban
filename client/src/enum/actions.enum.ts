@@ -3,6 +3,8 @@ enum actions {
   SIDEBAR_CLOSED = 'SIDEBAR_CLOSED',
   
   SWITCH_BOARD = 'SWITCH_BOARD',
+
+  SWITCH_THEME = 'SWITCH_THEME'
 };
 
 export default actions;
