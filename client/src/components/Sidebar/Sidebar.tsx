@@ -13,7 +13,8 @@ const Sidebar = () => {
   const dispatch = useAppDispatch();
   const { sidebarStatus } = useAppSelector((state) => state.sidebar);
   const { boards } = useAppSelector((state) => state.config);
-  // const { title } = useAppSelector((state) => state.activeBoard);
+  const { darkMode } = useAppSelector((state) => state.theme);
+
 
   const sidebarVariants = {
     start: { opacity: 1, x: -300 },
@@ -41,7 +42,7 @@ const Sidebar = () => {
         exit='closed'
         variants={sidebarVariants}
         transition={smoothAnimationCurve}
-        className={styles.sidebar}>
+        className={!darkMode ? styles.sidebar : [styles.sidebar, styles.dark].join(' ')}>
         <div className={styles.logo}>
           <Logo />
         </div>
